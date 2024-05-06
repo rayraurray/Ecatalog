@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class ScaleModels : MonoBehaviour
 {
     #region Scale Parameters
-    [SerializeField] private float _factor = 0.05f;
+    [SerializeField] private float _factor = 0.001f;
     private Vector3 originalScale; 
     private Vector3 originalPosition; 
     #endregion
