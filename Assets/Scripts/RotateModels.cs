@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class RotateModels : MonoBehaviour
 {
     #region Rotation Parameters
-    [SerializeField] private float _speed = 20.0f;
+    [SerializeField] private float _speed = 12.0f;
     [SerializeField] private bool _inverted = false;
     #endregion
     #region InputSystem Parameters
