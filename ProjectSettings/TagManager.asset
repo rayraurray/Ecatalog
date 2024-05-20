@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Models
   - Info Panel
+  - Transform Button
   layers:
   - Default
   - TransparentFX

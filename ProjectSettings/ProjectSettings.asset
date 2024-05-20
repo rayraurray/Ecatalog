@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Ray
-  productName: Ecatalog
+  productName: E-Catalogue
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +140,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.8
+  bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -162,7 +162,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Ray.Ecatalog
+    Android: com.Ray.ECatalogue
     iPhone: com.Bosch-Global-Software-Technologies.Ecatalog
   buildNumber:
     Standalone: 0
@@ -288,7 +288,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: e5a0094e7a9778a4392040e854a9a099, type: 3}
+      m_Icon: {fileID: 2800000, guid: d059e1addcee4f944aa647fb9009b1ee, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
