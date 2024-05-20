@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Lift : MonoBehaviour
+public class Move : MonoBehaviour
 {
     #region Transform Parameters
     [SerializeField] private float _speed = 0.2f;
@@ -43,8 +42,8 @@ public class Lift : MonoBehaviour
 
     private void Start()
     {
-        LeftClickPressedAction.started += _ => LiftStart();
-        LeftClickPressedAction.canceled += _ => LiftEnd();
+        LeftClickPressedAction.started += _ => MoveStart();
+        LeftClickPressedAction.canceled += _ => MoveEnd();
     }
 
     protected void InitializeInputSystem()
@@ -53,10 +52,10 @@ public class Lift : MonoBehaviour
         MouseLookAction = Actions.FindAction("MouseLook");
     }
 
-    private void LiftStart()
+    private void MoveStart()
     {
         RayCast();
-        _rotateCoroutine = StartCoroutine(LiftDetection());
+        _rotateCoroutine = StartCoroutine(MoveDetection());
     }
 
     private void RayCast()
@@ -71,12 +70,12 @@ public class Lift : MonoBehaviour
         }
     }
 
-    private void LiftEnd()
+    private void MoveEnd()
     {
         StopCoroutine(_rotateCoroutine);
     }
 
-    IEnumerator LiftDetection()
+    IEnumerator MoveDetection()
     {
         while (true)
         {
@@ -87,8 +86,8 @@ public class Lift : MonoBehaviour
                 Vector2 MouseDelta = GetMouseLookInput();
                 MouseDelta *= _speed * Time.deltaTime;
 
-                _modelTransform.localPosition = new Vector3(_modelTransform.localPosition.x,
-                                                            _modelTransform.localPosition.y + (MouseDelta.y * (_inverted ? -1 : 1)),
+                _modelTransform.localPosition = new Vector3(_modelTransform.localPosition.x + (MouseDelta.x * (_inverted ? -1 : 1)),
+                                                            _modelTransform.localPosition.y,
                                                             _modelTransform.localPosition.z);
 
                 yield return null;
