@@ -86,7 +86,7 @@ public class RotateVertically : MonoBehaviour
             {
                 Vector2 MouseDelta = GetMouseLookInput();
                 MouseDelta *= _speed * Time.deltaTime;
-                _modelTransform.Rotate(Vector3.right * (_inverted ? -1 : 1), MouseDelta.y, Space.World);
+                _modelTransform.Rotate(Vector3.left * (_inverted ? 1 : -1), MouseDelta.y, Space.World);
 
                 yield return null;
             }

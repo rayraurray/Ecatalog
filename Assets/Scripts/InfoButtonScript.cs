@@ -1,39 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InfoButtonScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _panels;
+    [SerializeField] private Button _btn;
+    [SerializeField] private GameObject _panel;
     [SerializeField] private bool _enabled;
+    private Info _info;
+    private GameObject _model;
+    private RaycastHit _raycastHit;
+    private Ray _ray;
 
     private void Awake()
     {
-        _enabled = true;
-        _panels = GameObject.FindGameObjectsWithTag("Info Panel");
+        _enabled = false;
     }
 
-    public void OnButtonClicked()
+    public void OnPress()
     {
         _enabled = !_enabled;
-        EnableInfo();
-    }
 
-    private void EnableInfo()
-    {
+        RayCast();
+
         if (_enabled)
         {
-            foreach (var panel in _panels)
-            {
-                panel.SetActive(true);
-            }
+            ShowInfoPanel();
+            Debug.Log("Shown");
         }
-        else
+        else if (!_enabled)
         {
-            foreach (var panel in _panels)
+            HideInfoPanel();
+            Debug.Log("Hidden");
+        }
+    }
+
+    private void RayCast()
+    {
+        _ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        if (Physics.Raycast(_ray, out _raycastHit))
+        {
+            if (_raycastHit.transform.gameObject.tag == "Models")
             {
-                panel.SetActive(false);
+                _model = _raycastHit.transform.gameObject;
+                _info = _model.GetComponent<Info>();
+            }
+            else
+            {
+                _model = GameObject.FindGameObjectWithTag("Models").transform.gameObject;
+                _info = _model.GetComponent<Info>();
             }
         }
+    }
+
+    private void ShowInfoPanel()
+    {
+        if (_model == null)
+            return;
+
+        _info.SendInfo();
+        _panel.SetActive(true);
+    }
+
+    private void HideInfoPanel()
+    {
+        if (_model == null)
+            return;
+
+        _info.Hide();
+        _panel.SetActive(false);    
     }
 }

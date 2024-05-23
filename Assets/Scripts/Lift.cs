@@ -87,9 +87,9 @@ public class Lift : MonoBehaviour
                 Vector2 MouseDelta = GetMouseLookInput();
                 MouseDelta *= _speed * Time.deltaTime;
 
-                _modelTransform.localPosition = new Vector3(_modelTransform.localPosition.x,
-                                                            _modelTransform.localPosition.y + (MouseDelta.y * (_inverted ? -1 : 1)),
-                                                            _modelTransform.localPosition.z);
+                Vector3 dir = Vector3.up * (MouseDelta.y * (_inverted ? -1 : 1));
+
+                _modelTransform.Translate(dir, Space.World);
 
                 yield return null;
             }
