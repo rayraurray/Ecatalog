@@ -55,6 +55,9 @@ public class Move : MonoBehaviour
     private void MoveStart()
     {
         RayCast();
+        if (_modelTransform == null)
+            return;
+
         _rotateCoroutine = StartCoroutine(MoveDetection());
     }
 

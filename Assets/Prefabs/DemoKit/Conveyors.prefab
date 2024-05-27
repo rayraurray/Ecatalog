@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8618202133238885624
+--- !u!1001 &5383168275253454547
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -68,40 +68,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conveyors
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
-      propertyPath: m_TagString
-      value: Models
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9038105303602881437}
+      addedObject: {fileID: 1129349945474152513}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 71134766044605534}
+      addedObject: {fileID: 9150482809360734022}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5646733012746630556}
+      addedObject: {fileID: 5948238563527183509}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5505646588489366347}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6636540318755614896}
   m_SourcePrefab: {fileID: 100100000, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
---- !u!1 &8888813721996661161 stripped
+--- !u!1 &5077160793711008642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cc1cf6c0c8522784eaa64924cbdc7c2b, type: 3}
-  m_PrefabInstance: {fileID: 8618202133238885624}
+  m_PrefabInstance: {fileID: 5383168275253454547}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &9038105303602881437
+--- !u!23 &1129349945474152513
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8888813721996661161}
+  m_GameObject: {fileID: 5077160793711008642}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -137,14 +135,14 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &71134766044605534
+--- !u!95 &9150482809360734022
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8888813721996661161}
+  m_GameObject: {fileID: 5077160793711008642}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 77fd0dfac9f2f654eae694b54c5cf55d, type: 2}
@@ -158,13 +156,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &5646733012746630556
+--- !u!65 &5948238563527183509
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8888813721996661161}
+  m_GameObject: {fileID: 5077160793711008642}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -179,3 +177,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0059160786, y: 0.0026932112, z: 0.005592611}
   m_Center: {x: 0.000012427837, y: 0.00042207207, z: 0.000047016023}
+--- !u!114 &5505646588489366347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077160793711008642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b720167aace12b428d38393493cf321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _modelName: Conveyors
+  _modelDescription: 'The Conveyors System consists of 2 conveyor parts: The Conveyor
+    for Sending the Samples to the Jar Detection - Color Marking System Conveyor
+    for sending the samples to the Pick-up Block. Each Conveyor Roller''s SPeed is
+    monitored by an encoder mounted inside.'
+--- !u!114 &6636540318755614896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077160793711008642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978274b5f9f667441bb7f164b0e8825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _model: {fileID: 5077160793711008642}

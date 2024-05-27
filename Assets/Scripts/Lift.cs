@@ -56,6 +56,9 @@ public class Lift : MonoBehaviour
     private void LiftStart()
     {
         RayCast();
+        if (_modelTransform == null)
+            return;
+
         _rotateCoroutine = StartCoroutine(LiftDetection());
     }
 

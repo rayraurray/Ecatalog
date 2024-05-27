@@ -24,6 +24,9 @@ public class InfoButtonScript : MonoBehaviour
 
         RayCast();
 
+        if (_model == null)
+            return;
+
         if (_enabled)
         {
             ShowInfoPanel();

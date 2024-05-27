@@ -66,6 +66,9 @@ public class Scale : MonoBehaviour
     private void ScaleStart()
     {
         RayCast();
+        if (_modelTransform == null)
+            return;
+
         _scaleCoroutine = StartCoroutine(ScaleDetection());
     }
 

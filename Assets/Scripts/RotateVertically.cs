@@ -56,6 +56,9 @@ public class RotateVertically : MonoBehaviour
     private void RotateStart()
     {
         RayCast();
+        if (_modelTransform == null)
+            return;
+
         _rotateCoroutine = StartCoroutine(RotationDetection());
     }
 
