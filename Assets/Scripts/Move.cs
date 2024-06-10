@@ -86,10 +86,14 @@ public class Move : MonoBehaviour
                 yield return null;
             else
             {
-                Vector2 MouseDelta = GetMouseLookInput();
-                MouseDelta *= _speed * Time.deltaTime;
+                Vector2 mouseDelta = GetMouseLookInput();
+                mouseDelta *= _speed * Time.deltaTime;
 
-                Vector3 dir = Vector3.left * MouseDelta.x * (_inverted ? 1 : -1);
+                // Get the camera's right vector
+                Vector3 cameraRight = Camera.main.transform.right;
+
+                // Move left or right relative to the camera's right vector
+                Vector3 dir = cameraRight * mouseDelta.x * (_inverted ? -1 : 1);
 
                 _modelTransform.Translate(dir, Space.World);
 
